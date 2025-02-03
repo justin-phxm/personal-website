@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import AnimatedComponent from "@/styles/AnimatedComponent";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -15,11 +16,17 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="flex min-h-screen flex-col overflow-x-hidden bg-gray-950">
+      <body className="flex min-h-screen flex-col overflow-hidden bg-gray-950">
         <main className="m-4 flex flex-1 flex-col justify-center rounded-lg border border-slate-800 bg-slate-900">
-          <NavBar />
-          <div className="m-2 flex flex-1 text-white">{children}</div>
-          <Footer />
+          <AnimatedComponent variants="fadeDown">
+            <NavBar />
+          </AnimatedComponent>
+          <div className="relative m-2 flex flex-1 text-white">
+            <div className="absolute inset-0 overflow-y-auto">{children}</div>
+          </div>
+          <AnimatedComponent>
+            <Footer />
+          </AnimatedComponent>
         </main>
       </body>
     </html>
