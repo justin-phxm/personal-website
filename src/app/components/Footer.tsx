@@ -16,7 +16,9 @@ const socialIconMap: Record<keyof typeof social, React.ReactElement> = {
 export default function Footer() {
   return (
     <footer className="flex justify-between border-t border-slate-800 text-slate-500 shadow md:items-center md:justify-between">
-      <span className="p-3 sm:text-center">find me in:</span>
+      <span className="flex w-full items-center justify-center text-center text-xs sm:p-3 sm:text-base md:justify-start">
+        find me in:
+      </span>
       <ul className="flex items-center text-2xl">
         <li className={"border-l border-slate-800 p-3"}>
           <Link href={RESUME_PDF} target="_blank">

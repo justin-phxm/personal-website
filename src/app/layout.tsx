@@ -22,7 +22,9 @@ export default function RootLayout({
             <NavBar />
           </AnimatedComponent>
           <div className="relative m-2 flex flex-1 text-white">
-            <div className="absolute inset-0 overflow-y-auto">{children}</div>
+            <div className="absolute inset-0 overflow-y-auto overflow-x-hidden">
+              {children}
+            </div>
           </div>
           <AnimatedComponent>
             <Footer />
