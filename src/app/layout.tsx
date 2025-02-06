@@ -21,7 +21,7 @@ export default function RootLayout({
           <AnimatedComponent variants="fadeDown">
             <NavBar />
           </AnimatedComponent>
-          <div className="relative m-2 flex flex-1 text-white">
+          <div className="relative flex flex-1 text-white">
             <div className="absolute inset-0 overflow-y-auto overflow-x-hidden">
               {children}
             </div>

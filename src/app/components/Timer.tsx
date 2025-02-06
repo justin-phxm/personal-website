@@ -33,11 +33,14 @@ export default function Timer(props: TimerProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
+    if (minutes === 59) {
+      clearInterval(intervalId);
+    }
     if (seconds === 60) {
       setSeconds(0);
       setMinutes((prevMinutes) => prevMinutes + 1);
     }
-  }, [seconds]);
+  }, [intervalId, minutes, seconds]);
   function resetTime() {
     clearInterval(intervalId); // Clear the current interval
     setSeconds(0);

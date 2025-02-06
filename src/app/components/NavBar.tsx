@@ -35,7 +35,7 @@ export default function NavBar() {
           </ul>
         </div>
         <Link
-          className="hidden border-r border-slate-800 px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-slate-800 sm:flex"
+          className="hidden px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-slate-800 sm:flex"
           href={navigation2["_contact-me"]}
         >
           {"_contact-me" as keyof typeof navigation2}
